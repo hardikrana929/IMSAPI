@@ -32,26 +32,26 @@ public class SignupController {
 //		return "This is Signup Controller";
 //	}
 	
-	@GetMapping("/signup")
+	@GetMapping("/ims/signup")
 	public List<SignupUser> getUsers(){		
 		return this.signupservice.getAllUsers();
 	}
 	
 	//Insert data
-	@PostMapping("/signupuser")
+	@PostMapping("/ims/signupuser")
 	public SignupUser addUsers(@RequestBody SignupUser suser) {		
 		return this.signupservice.addUser(suser);		
 	}
 	
 	
-	@PutMapping("/signup")
+	@PutMapping("/ims/signup")
 	public SignupUser updateUser(@RequestBody SignupUser suser) {
 		
 		return this.signupservice.updateUser(suser);
 	}
 	
 	//DELETE DATA
-	@DeleteMapping("/signup/{uid}")
+	@DeleteMapping("/ims/signup/{uid}")
 	public ResponseEntity<HttpStatus> deleteUser(@PathVariable Integer uid) {
 		try {
 			this.signupservice.deleteUser(uid);
